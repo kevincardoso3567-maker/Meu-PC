@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Segurança – Meu PC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            dark: '#0F172A',
+            card: '#1E293B',
+            neon: '#00D4FF',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glow { text-shadow: 0 0 30px #00D4FF, 0 0 60px rgba(0,212,255,0.4); }
+    .card-hover:hover { 
+      transform: translateY(-16px); 
+      box-shadow: 0 25px 50px rgba(0,212,255,0.2); 
+      border-color: #00D4FF !important;
+    }
+  </style>
+</head>
+<body class="bg-dark text-white min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-dark/90 backdrop-blur-xl z-50 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <div class="w-11 h-11 bg-gradient-to-br from-neon to-blue-600 rounded-xl flex items-center justify-center font-black text-2xl">PC</div>
+        <h1 class="text-2xl font-black">Meu PC</h1>
+      </div>
+      <div class="hidden md:flex space-x-10 text-gray-300 font-medium">
+        <a href="index.html" class="hover:text-neon transition">Início</a>
+        <a href="atalhos.html" class="hover:text-neon transition">Atalhos</a>
+        <a href="desempenho.html" class="hover:text-neon transition">Desempenho</a>
+        <a href="seguranca.html" class="text-neon font-bold">Segurança</a>
+        <a href="personalizacao.html" class="hover:text-neon transition">Personalização</a>
+        <a href="ferramentas.html" class="hover:text-neon transition">Ferramentas</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-neon/10 via-transparent to-transparent"></div>
+    <div class="text-center z-10 px-6 max-w-5xl">
+      <h2 class="text-6xl md:text-8xl font-black mb-6 glow leading-tight">Segurança</h2>
+      <p class="text-2xl md:text-5xl font-light text-gray-300 mb-12">Seu PC protegido como nunca</p>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">Dicas reais que bloqueiam 99% das ameaças – sem complicação</p>
+    </div>
+  </section>
+
+  <!-- Dicas de Segurança -->
+  <section class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Ativar Windows Defender em tempo real</h3>
+        <p class="text-gray-400">Configurações → Atualização e Segurança → Windows Security → Proteção contra vírus → Sempre ligado</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Verificar se tem vírus agora</h3>
+        <p class="text-gray-400">Windows Security → Proteção contra vírus → Opções de verificação → Verificação completa</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-2.67-2.24-5-5-5S2 8.33 2 11s2.24 5 5 5 5-2.33 5-5zm0 0c0 2.67 2.24 5 5 5s5-2.33 5-5-2.24-5-5-5-5 2.33-5 5z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Usar senha forte + PIN</h3>
+        <p class="text-gray-400">Configurações → Contas → Opções de entrada → PIN do Windows (mais rápido e seguro que senha)</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Ativar BitLocker (criptografia)</h3>
+        <p class="text-gray-400">Pesquise "BitLocker" → Ativar no disco C: (ninguém acessa sem sua senha)</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Usar autenticação em duas etapas</h3>
+        <p class="text-gray-400">Em todas as contas (Google, Microsoft, banco) → Ative 2FA com app (nunca SMS)</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Nunca clique em links estranhos</h3>
+        <p class="text-gray-400">90% dos vírus entram por e-mail ou WhatsApp. Duvide de tudo que parece "urgente"</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Fazer backup toda semana</h3>
+        <p class="text-gray-400">Configurações → Atualização e Segurança → Backup → Adicionar uma unidade (HD externo)</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Desativar macros no Office</h3>
+        <p class="text-gray-400">Word/Excel → Arquivo → Opções → Central de Confiabilidade → Desativar todas as macros</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Usar gerenciador de senhas</h3>
+        <p class="text-gray-400">Bitwarden (grátis) ou Microsoft Authenticator → Nunca repita senhas</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM4 19h16"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Desativar execução automática de USB</h3>
+        <p class="text-gray-400">Win + R → gpedit.msc → Configuração do Computador → Modelos Administrativos → Sistema → Removable Storage Access → Desativar tudo</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="py-16 text-center text-gray-500 border-t border-white/10">
+    <p class="text-lg">© 2025 Meu PC — Feito com carinho para quem quer dominar o Windows sem virar técnico</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ferramentas Escondidas – Meu PC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            dark: '#0F172A',
+            card: '#1E293B',
+            neon: '#00D4FF',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glow { text-shadow: 0 0 30px #00D4FF, 0 0 60px rgba(0,212,255,0.4); }
+    .card-hover:hover { 
+      transform: translateY(-16px); 
+      box-shadow: 0 25px 50px rgba(0,212,255,0.2); 
+      border-color: #00D4FF !important;
+    }
+  </style>
+</head>
+<body class="bg-dark text-white min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-dark/90 backdrop-blur-xl z-50 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <div class="w-11 h-11 bg-gradient-to-br from-neon to-blue-600 rounded-xl flex items-center justify-center font-black text-2xl">PC</div>
+        <h1 class="text-2xl font-black">Meu PC</h1>
+      </div>
+      <div class="hidden md:flex space-x-10 text-gray-300 font-medium">
+        <a href="index.html" class="hover:text-neon transition">Início</a>
+        <a href="atalhos.html" class="hover:text-neon transition">Atalhos</a>
+        <a href="desempenho.html" class="hover:text-neon transition">Desempenho</a>
+        <a href="seguranca.html" class="hover:text-neon transition">Segurança</a>
+        <a href="personalizacao.html" class="hover:text-neon transition">Personalização</a>
+        <a href="ferramentas.html" class="text-neon font-bold">Ferramentas</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-neon/10 via-transparent to-transparent"></div>
+    <div class="text-center z-10 px-6 max-w-5xl">
+      <h2 class="text-6xl md:text-8xl font-black mb-6 glow leading-tight">Ferramentas Escondidas</h2>
+      <p class="text-2xl md:text-5xl font-light text-gray-300 mb-12">Segredos que a Microsoft não conta</p>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">God Mode, diagnósticos secretos, comandos poderosos e mais</p>
+    </div>
+  </section>
+
+  <!-- Ferramentas Escondidas -->
+  <section class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">God Mode</h3>
+        <p class="text-gray-400">Crie uma pasta → renomeie para:<br><code class="bg-dark px-3 py-1 rounded">GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</code></p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4m-6 0a2 2 0 00-2 2H5a2 2 0 00-2-2V5a2 2 0 012-2h2a2 2 0 012 2z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Monitor de Recursos</h3>
+        <p class="text-gray-400">Win + R → <code class="bg-dark px-2 py-1 rounded">resmon</code> → veja exatamente o que está consumindo CPU/RAM</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Modo Deus (Diagnóstico)</h3>
+        <p class="text-gray-400">Win + R → <code class="bg-dark px-2 py-1 rounded">msinfo32</code> → informações completas do sistema</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Event Viewer (Logs secretos)</h3>
+        <p class="text-gray-400">Win + R → <code class="bg-dark px-2 py-1 rounded">eventvwr</code> → veja todos os erros e falhas</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Gerenciador de Disco</h3>
+        <p class="text-gray-400">Win + R → <code class="bg-dark px-2 py-1 rounded">diskmgmt.msc</code> → particione HDs como profissional</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Verificador de Arquivos do Sistema</h3>
+        <p class="text-gray-400">CMD como admin → <code class="bg-dark px-2 py-1 rounded">sfc /scannow</code> → conserta arquivos corrompidos</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">PowerShell como Admin</h3>
+        <p class="text-gray-400">Pesquise PowerShell → clique direito → Executar como administrador</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Teste de Memória RAM</h3>
+        <p class="text-gray-400">Win + R → <code class="bg-dark px-2 py-1 rounded">mdsched</code> → reinicie e teste erros de memória</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4m16 0c0 2.21-3.582 4-8 4s-8-1.79-8-4m16 0c0-2.21 3.582-4 8-4s8 1.79 8 4z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">DirectX Diagnóstico</h3>
+        <p class="text-gray-400">Win + R → <code class="bg-dark px-2 py-1 rounded">dxdiag</code> → informações completas da placa de vídeo</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Gerenciador de Dispositivos</h3>
+        <p class="text-gray-400">Win + R → <code class="bg-dark px-2 py-1 rounded">devmgmt.msc</code> → veja e controle todo o hardware</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Editor do Registro</h3>
+        <p class="text-gray-400">Win + R → <code class="bg-dark px-2 py-1 rounded">regedit</code> → altere tudo no sistema (cuidado!)</p>
+      </div>
+
+      <div class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 transition-all duration-500 group">
+        <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
+          <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-3xl font-black mb-4">Prompt de Comando como Admin</h3>
+        <p class="text-gray-400">Pesquise "cmd" → clique direito → Executar como administrador</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="py-16 text-center text-gray-500 border-t border-white/10">
+    <p class="text-lg">© 2025 Meu PC — Feito com carinho para quem quer dominar o Windows sem virar técnico</p>
+  </footer>
+
+</body>
+</html>
