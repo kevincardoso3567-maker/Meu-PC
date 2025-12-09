@@ -1,4 +1,4 @@
-/* ===== RESET & BASE ===== */
+/* ===== RESET & BASE (Sem alterações) ===== */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
 body { 
@@ -17,10 +17,9 @@ body {
 }
 a { text-decoration:none; color:inherit; }
 
-/* ===== CORES ===== */
+/* ===== CORES & NAVBAR (Pequena alteração na altura da nav-container) ===== */
 .neon { color:#00D4FF; }
 
-/* ===== NAVBAR ===== */
 .navbar {
   position:fixed;
   top:0; left:0; right:0;
@@ -35,7 +34,8 @@ a { text-decoration:none; color:inherit; }
   justify-content:space-between;
   align-items:center;
   padding:1rem 1.25rem;
-  height:70px;
+  /* Altura da nav-bar ligeiramente reduzida para telas pequenas */
+  height:70px; 
 }
 .logo {
   display:flex;
@@ -95,7 +95,7 @@ a { text-decoration:none; color:inherit; }
   display:none;
   flex-direction:column;
   position:absolute;
-  top:100%;
+  top:70px; /* Ajusta para a altura da nav-container */
   left:0; right:0;
   background:rgba(15,23,42,0.99);
   backdrop-filter:blur(20px);
@@ -115,7 +115,7 @@ a { text-decoration:none; color:inherit; }
   color:#00D4FF;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (Sem alterações) ===== */
 .hero {
   min-height:100vh;
   display:flex;
@@ -155,7 +155,7 @@ a { text-decoration:none; color:inherit; }
   transform:translateY(-3px);
 }
 
-/* ===== CARDS HOME ===== */
+/* ===== CARDS HOME (Sem alterações) ===== */
 .categories { padding:6rem 1.25rem; }
 .grid {
   display:grid;
@@ -187,7 +187,7 @@ a { text-decoration:none; color:inherit; }
   font-weight:800;
 }
 
-/* ===== PÁGINAS INTERNAS (Atalhos, Desempenho, etc.) ===== */
+/* ===== PÁGINAS INTERNAS (Atalhos, Desempenho, etc.) (Sem alterações) ===== */
 .page-header {
   padding:7rem 1.25rem 2rem;
   text-align:center;
@@ -233,7 +233,7 @@ a { text-decoration:none; color:inherit; }
   margin-bottom:0.4rem;
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER (Sem alterações) ===== */
 .footer {
   padding:4rem 1.25rem 2rem;
   text-align:center;
@@ -242,51 +242,81 @@ a { text-decoration:none; color:inherit; }
   border-top:1px solid rgba(255,255,255,0.08);
 }
 
-/* ===== RESPONSIVO PERFEITO ===== */
+/* ========================================================= */
+/* ===== RESPONSIVO PERFEITO (AJUSTADO PARA CELULAR) ===== */
+/* ========================================================= */
+
+/* Ajustes para Tablets (MÁX. 1024px) */
 @media (max-width: 1024px) {
-  .hero h2 { font-size:4.2rem; }
-  .hero .subtitle { font-size:2rem; }
+  /* Diminui um pouco o tamanho da fonte principal do HERO */
+  .hero h2 { font-size:3.8rem; }
+  .hero .subtitle { font-size:1.8rem; }
 }
 
+/* Ponto de Ruptura Principal para Celulares e Tablets em modo retrato (MÁX. 768px) */
 @media (max-width: 768px) {
-  /* Navbar */
-  .nav-links { display:none; }
-  .mobile-menu-btn { display:block; }
+  /* NAV BAR E MOBILE MENU */
+  .nav-links { display:none; } /* Oculta menu desktop */
+  .mobile-menu-btn { display:block; } /* Exibe botão hambúrguer */
+  .nav-container { padding:0.8rem 1.25rem; height:65px; }
+  .mobile-menu { top:65px; } /* Ajusta o menu para a nova altura da navbar */
 
-  /* Hero */
-  .hero { padding-top:9rem; min-height:90vh; }
-  .hero h2 { font-size:3rem; }
-  .hero .subtitle { font-size:1.6rem; }
-  .btn-primary { padding:1rem 2.5rem; font-size:1.2rem; }
+  /* HERO */
+  .hero { padding-top:8rem; min-height:80vh; }
+  .hero h2 { font-size:2.8rem; } /* Tamanho reduzido para título */
+  .hero .subtitle { font-size:1.4rem; max-width:100%; }
+  .btn-primary { padding:0.9rem 2.2rem; font-size:1.15rem; }
 
-  /* Cards */
-  .card { padding:2.5rem 1.5rem; }
-  .card .icon { font-size:3.2rem; }
-  .card h3 { font-size:1.5rem; }
+  /* CARDS */
+  .categories { padding:4rem 1.25rem; }
+  .grid { grid-template-columns:1fr; } /* Coloca 1 card por linha */
+  .card { padding:2rem 1.5rem; }
+  .card .icon { font-size:3rem; }
+  .card h3 { font-size:1.6rem; }
 
-  /* Conteúdo */
-  .page-header h2 { font-size:2.7rem; }
+  /* CONTEÚDO E ATALHOS */
+  .page-header { padding:7rem 1.25rem 2rem; }
+  .page-header h2 { font-size:2.4rem; }
+  .shortcuts, .tips { padding:0 1.25rem 4rem; }
+
+  /* Cartões de Atalhos em Coluna para Celular */
   .shortcut-card, .tip-card {
     flex-direction:column;
     text-align:center;
-    gap:1.2rem;
+    gap:1rem;
+    padding:1.5rem;
   }
   .shortcut-card kbd {
     min-width:auto;
-    width:100%;
-    max-width:260px;
+    width:100%; /* Ocupa a largura total do card */
+    max-width:300px; /* Limite de largura para não esticar demais */
+    font-size:1.1rem;
+  }
+  .shortcut-card h4, .tip-card h4 {
+    font-size:1.25rem;
+    margin-bottom:0;
   }
 }
 
+/* Ajustes Finais para Celulares Pequenos (MÁX. 480px) */
 @media (max-width: 480px) {
-  .nav-container { height:60px; padding:0.8rem 1rem; }
-  .logo { font-size:1.5rem; gap:8px; }
-  .pc-icon { width:38px; height:38px; font-size:1.1rem; }
+  .container { padding:0 0.8rem; }
+  
+  /* NAV BAR */
+  .nav-container { height:55px; padding:0.6rem 0.8rem; }
+  .logo { font-size:1.6rem; gap:6px; }
+  .pc-icon { width:35px; height:35px; font-size:1.0rem; border-radius:8px; }
+  .mobile-menu { top:55px; } /* Ajusta o menu para a nova altura da navbar */
+  .mobile-menu-btn { font-size:1.8rem; }
 
-  .hero h2 { font-size:2.5rem; }
-  .hero .subtitle { font-size:1.4rem; }
-  .btn-primary { padding:0.9rem 2.2rem; font-size:1.1rem; }
+  /* HERO */
+  .hero h2 { font-size:2.2rem; }
+  .hero .subtitle { font-size:1.2rem; }
+  .btn-primary { padding:0.8rem 2rem; font-size:1.0rem; }
 
-  .card { padding:2rem 1.2rem; }
-  .card h3 { font-size:1.4rem; }
+  /* CONTEÚDO */
+  .page-header h2 { font-size:2rem; }
+  .shortcut-card kbd { font-size:1rem; padding:0.8rem 1rem; }
+  .shortcut-card h4, .tip-card h4 { font-size:1.15rem; }
+  .footer { font-size:0.9rem; padding:3rem 0.8rem 1.5rem; }
 }
