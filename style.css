@@ -1,11 +1,11 @@
-/* ===== RESET & BASE (Sem alterações) ===== */
+/* ===== RESET ===== */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
 body { 
-  font-family:'Inter',sans-serif; 
-  background:#0F172A; 
-  color:#FBFDFE; 
-  line-height:1.6; 
+  font-family:'Inter',sans-serif;
+  background:#0F172A;
+  color:#FBFDFE;
+  line-height:1.6;
   min-height:100vh;
   overflow-x:hidden;
 }
@@ -17,15 +17,12 @@ body {
 }
 a { text-decoration:none; color:inherit; }
 
-/* ===== CORES & NAVBAR ===== */
-.neon { color:#00D4FF; }
-
+/* ===== NAVBAR ===== */
 .navbar {
   position:fixed;
   top:0; left:0; right:0;
-  background:rgba(15,23,42,0.98);
+  background:rgba(15,23,42,0.95);
   backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
   z-index:1000;
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
@@ -33,54 +30,39 @@ a { text-decoration:none; color:inherit; }
   display:flex;
   justify-content:space-between;
   align-items:center;
+  height:70px;
   padding:1rem 1.25rem;
-  height:70px; 
 }
 .logo {
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
   font-size:1.8rem;
   font-weight:900;
 }
 .pc-icon {
-  width:48px; height:48px;
+  width:44px; height:44px;
   background:linear-gradient(135deg,#00D4FF,#0066FF);
   color:#0F172A;
-  font-weight:bold;
-  font-size:1.4rem;
-  border-radius:12px;
+  font-size:1.2rem;
+  border-radius:10px;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
-/* Desktop Menu */
+/* Desktop */
 .nav-links {
   display:flex;
   gap:2rem;
-  align-items:center;
 }
 .nav-links a {
   font-weight:600;
   font-size:1.05rem;
   transition:color .3s;
-  position:relative;
-}
-.nav-links a:hover,
-.nav-links a.active { color:#00D4FF; }
-.nav-links a.active::after {
-  content:'';
-  position:absolute;
-  bottom:-10px;
-  left:0;
-  width:100%;
-  height:3px;
-  background:#00D4FF;
-  border-radius:3px;
 }
 
-/* Mobile Menu (Hambúrguer) */
+/* Mobile */
 .mobile-menu-btn {
   display:none;
   background:none;
@@ -88,245 +70,129 @@ a { text-decoration:none; color:inherit; }
   font-size:2.2rem;
   color:#00D4FF;
   cursor:pointer;
-  padding:0.5rem;
 }
 .mobile-menu {
   display:none;
   flex-direction:column;
   position:absolute;
-  top:70px; 
+  top:70px;
   left:0; right:0;
-  background:rgba(15,23,42,0.99);
-  backdrop-filter:blur(20px);
+  background:rgba(15,23,42,0.98);
   border-bottom:1px solid rgba(255,255,255,0.1);
-  box-shadow:0 10px 20px rgba(0,0,0,0.3);
 }
 .mobile-menu.active { display:flex; }
-.mobile-menu a {
-  padding:1.2rem 2rem;
-  font-weight:600;
-  font-size:1.1rem;
-  transition:all .3s;
-}
-.mobile-menu a:hover,
-.mobile-menu a.active {
-  background:rgba(0,212,255,0.2);
-  color:#00D4FF;
-}
 
 /* ===== HERO ===== */
 .hero {
   min-height:100vh;
+  padding:7rem 1.25rem 4rem;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:7rem 1.25rem 4rem;
   background:radial-gradient(circle at center, rgba(0,212,255,0.1), transparent 70%);
 }
 .hero h2 {
-  font-size:3.8rem;
+  font-size:3.5rem;
   font-weight:900;
   line-height:1.1;
   margin-bottom:1rem;
-  text-shadow:0 0 30px rgba(0,212,255,0.5);
 }
 .hero .subtitle {
-  font-size:1.9rem;
+  font-size:1.6rem;
   color:#94a3b8;
+  max-width:700px;
   margin:1.5rem 0;
-  max-width:90%;
 }
 .btn-primary {
-  margin-top:2.5rem;
-  padding:1.1rem 3rem;
+  margin-top:2rem;
+  padding:1rem 2.8rem;
   background:#00D4FF;
   color:#0F172A;
   font-weight:bold;
-  font-size:1.3rem;
+  font-size:1.2rem;
   border-radius:50px;
-  transition:all .3s;
-  box-shadow:0 8px 25px rgba(0,212,255,0.3);
-}
-.btn-primary:hover { 
-  background:#fff; 
-  transform:translateY(-3px);
 }
 
-/* ===== CARDS HOME ===== */
-.categories { padding:6rem 1.25rem; }
+/* ===== GRID ===== */
 .grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:2.2rem;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:2rem;
 }
 .card {
   background:rgba(30,41,59,0.65);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,0.08);
-  border-radius:28px;
-  padding:2.8rem 2rem;
+  border-radius:24px;
+  padding:2.5rem 1.8rem;
+  transition:all .3s;
   text-align:center;
-  transition:all .4s ease;
-}
-.card:hover {
-  transform:translateY(-14px);
-  box-shadow:0 25px 50px rgba(0,212,255,0.25);
-  border-color:#00D4FF;
-}
-.card .icon { 
-  font-size:3.8rem; 
-  margin-bottom:1.2rem; 
-}
-.card h3 { 
-  font-size:1.7rem; 
-  margin:1rem 0 0.8rem; 
-  font-weight:800;
 }
 
-/* ===== PÁGINAS INTERNAS (Atalhos, Desempenho, etc.) ===== */
-.page-header {
-  padding:7rem 1.25rem 2rem;
-  text-align:center;
-}
-.page-header h2 {
-  font-size:3.2rem;
-  font-weight:900;
-  margin-bottom:1rem;
-}
+/* ===== CARDS INTERNOS ===== */
 .shortcuts, .tips {
-  padding:0 1.25rem 6rem;
+  padding:0 1.25rem 4rem;
 }
 .shortcut-card, .tip-card {
   background:rgba(30,41,59,0.65);
-  backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,0.08);
   border-radius:24px;
-  padding:1.8rem;
-  margin-bottom:1.5rem;
+  padding:1.6rem;
   display:flex;
   align-items:center;
   gap:1.5rem;
-  transition:all .3s;
-}
-.shortcut-card:hover, .tip-card:hover {
-  border-color:#00D4FF;
-  transform:translateX(8px);
 }
 .shortcut-card kbd {
   background:#1E293B;
   color:#00D4FF;
-  padding:0.9rem 1.3rem;
-  border-radius:14px;
-  font-family:monospace;
-  font-size:1.15rem;
-  font-weight:bold;
-  min-width:140px;
+  padding:0.8rem 1rem;
+  border-radius:12px;
+  font-size:1.1rem;
+  min-width:130px;
   text-align:center;
 }
-/* CORREÇÃO APLICADA: Remove margem inferior padrão e permite quebra de linha */
-.shortcut-card h4, .tip-card h4 {
-  font-size:1.35rem;
-  font-weight:700;
-  margin-bottom:0; 
-  word-wrap: break-word; 
+
+/* ===== RESPONSIVO ===== */
+
+/* Tablets */
+@media (max-width:1024px) {
+  .hero h2 { font-size:3rem; }
+  .hero .subtitle { font-size:1.4rem; }
 }
 
-/* ===== FOOTER ===== */
-.footer {
-  padding:4rem 1.25rem 2rem;
-  text-align:center;
-  color:#64748B;
-  font-size:1rem;
-  border-top:1px solid rgba(255,255,255,0.08);
-}
+/* Celulares médios */
+@media (max-width:768px) {
+  .nav-links { display:none; }
+  .mobile-menu-btn { display:block; }
+  .nav-container { height:65px; }
 
-/* ========================================================= */
-/* ===== RESPONSIVO PERFEITO (AJUSTADO FINALMENTE) ===== */
-/* ========================================================= */
+  .hero { padding-top:8rem; }
+  .hero h2 { font-size:2.6rem; }
+  .hero .subtitle { font-size:1.25rem; }
 
-/* Ajustes para Tablets (MÁX. 1024px) */
-@media (max-width: 1024px) {
-  .hero h2 { font-size:3.8rem; }
-  .hero .subtitle { font-size:1.8rem; }
-}
-
-/* Ponto de Ruptura Principal para Celulares e Tablets em modo retrato (MÁX. 768px) */
-@media (max-width: 768px) {
-  /* NAV BAR E MOBILE MENU */
-  .nav-links { 
-    display:none !important; 
-  } 
-  .mobile-menu-btn { display:block; } 
-  .nav-container { padding:0.8rem 1.25rem; height:65px; }
-  .mobile-menu { top:65px; } 
-
-  /* HERO */
-  .hero { padding-top:8rem; min-height:80vh; }
-  .hero h2 { font-size:2.8rem; } 
-  .hero .subtitle { font-size:1.4rem; max-width:100%; }
-  .btn-primary { padding:0.9rem 2.2rem; font-size:1.15rem; }
-
-  /* CONTEÚDO E ATALHOS */
-  .page-header { padding:7rem 1.25rem 2rem; }
-  .page-header h2 { font-size:2.4rem; }
-  .shortcuts, .tips { padding:0 1.25rem 4rem; }
-
-  /* CORREÇÃO CHAVE: Forçando o layout em coluna e centralizando o conteúdo do card */
+  /* Corrige cards internos quebrando */
   .shortcut-card, .tip-card {
-    flex-direction:column; /* Coloca kbd e h4 em linhas separadas */
+    flex-direction:column;
     text-align:center;
-    justify-content:center;
-    align-items:center;
     gap:1rem;
-    padding:1.5rem;
   }
   .shortcut-card kbd {
     min-width:auto;
-    width:90%; 
-    max-width:300px; 
-    font-size:1.1rem;
-    margin-bottom: 0.5rem; /* Espaçamento entre a tecla e o texto */
-  }
-  /* Garante que o container do texto ocupa a largura total para centralização */
-  .shortcut-card > div {
-      width: 100%;
-      text-align: center;
-  }
-  .shortcut-card h4, .tip-card h4 {
-    font-size:1.25rem;
-    margin-bottom:0;
-    text-align: center;
-    white-space: normal; /* Permite que o texto quebre a linha em vez de cortar */
+    width:100%;
   }
 }
 
-/* Ajustes Finais para Celulares Pequenos (MÁX. 480px) */
-@media (max-width: 480px) {
-  .container { padding:0 0.8rem; }
-  
-  /* NAV BAR (Ajustes de tamanhos para evitar corte no topo) */
-  .nav-container { height:55px; padding:0.6rem 0.8rem; }
-  .logo { font-size:1.4rem; gap:4px; } 
-  .pc-icon { width:32px; height:32px; font-size:0.9rem; border-radius:8px; } 
-  .mobile-menu { top:55px; } 
-  .mobile-menu-btn { font-size:1.8rem; }
+/* Celulares pequenos */
+@media (max-width:480px) {
+  .nav-container { height:55px; padding:0.6rem 1rem; }
+  .logo { font-size:1.4rem; }
+  .pc-icon { width:32px; height:32px; font-size:0.9rem; }
 
-  /* HERO (Ajustes de fontes para evitar corte) */
-  .hero h2 { font-size:2.0rem; } 
-  .hero .subtitle { font-size:1.1rem; } 
-  .btn-primary { padding:0.8rem 2rem; font-size:1.0rem; }
+  .hero h2 { font-size:2rem; }
+  .hero .subtitle { font-size:1rem; }
+  .btn-primary { font-size:1rem; padding:0.8rem 1.8rem; }
 
-  /* CONTEÚDO */
-  .page-header h2 { font-size:1.8rem; } 
-  .shortcut-card kbd { 
-      font-size:0.9rem; 
-      padding:0.7rem 1rem; 
-      width:100%; 
-      max-width: none; /* Permite que o kbd se estique mais um pouco */
-  } 
-  .shortcut-card h4, .tip-card h4 { font-size:1.05rem; } 
-  .footer { font-size:0.9rem; padding:3rem 0.8rem 1.5rem; }
+  /* Grid mais estreito para caber melhor */
+  .grid { grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); }
 }
