@@ -10,26 +10,11 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" as="style" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: {
-            dark: '#0F172A',
-            card: '#1E293B',
-            neon: '#00D4FF',
-          },
-          transitionTimingFunction: {
-            smooth: 'cubic-bezier(.4, 0, .2, 1)',
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="index.css"> 
 
   <style>
+    /* Estilos customizados que serão mantidos no HTML, se preferir, ou movidos para o index.css */
+    /* Nota: Se o index.css for o arquivo principal, estes estilos podem ser redundantes */
     .glow {
       text-shadow: 0 0 30px #00D4FF, 0 0 60px rgba(0,212,255,0.4);
     }
@@ -46,24 +31,19 @@
 </head>
 
 <body class="bg-dark text-white min-h-screen">
+  <header class="navbar"> <nav class="nav-container max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="fixed top-0 w-full bg-dark/90 backdrop-blur-xl z-50 border-b border-white/5">
-    <nav class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-
-      <a href="/" class="flex items-center space-x-3 group">
-        <div class="w-11 h-11 bg-gradient-to-br from-neon to-blue-600 rounded-xl flex items-center justify-center font-black text-2xl group-hover:scale-110 transition">
-          PC
-        </div>
-        <h1 class="text-2xl font-black">Meu PC</h1>
+      <a href="/" class="nav-logo group">
+        <div class="nav-logo-icon"> PC </div>
+        <h1>Meu PC</h1>
       </a>
 
-      <div class="hidden md:flex space-x-10 text-gray-300 font-medium">
-        <a href="atalhos.html" class="hover:text-neon transition">Atalhos</a>
-        <a href="desempenho.html" class="hover:text-neon transition">Desempenho</a>
-        <a href="seguranca.html" class="hover:text-neon transition">Segurança</a>
-        <a href="personalizacao.html" class="hover:text-neon transition">Personalização</a>
-        <a href="ferramentas.html" class="hover:text-neon transition">Ferramentas</a>
+      <div class="nav-links">
+        <a href="atalhos.html">Atalhos</a>
+        <a href="desempenho.html">Desempenho</a>
+        <a href="seguranca.html">Segurança</a>
+        <a href="personalizacao.html">Personalização</a>
+        <a href="ferramentas.html">Ferramentas</a>
       </div>
 
     </nav>
@@ -71,86 +51,77 @@
 
   <main>
 
-    <!-- ================= HERO ================= -->
-    <section class="h-screen flex items-center justify-center relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-neon/10 via-transparent to-transparent pointer-events-none"></div>
+    <section class="hero">
+      <div class="hero-content">
+        <h2 class="glow">Meu PC</h2>
 
-      <div class="text-center z-10 px-6 max-w-5xl">
-        <h2 class="text-6xl md:text-8xl font-black mb-6 glow leading-tight">Meu PC</h2>
-
-        <p class="text-2xl md:text-5xl font-light text-gray-300 mb-12 leading-tight">
+        <p class="hero-subtitle">
           Seu PC na <span class="text-neon font-bold">velocidade máxima</span>
           <br class="hidden md:block">em 5 minutos por dia
         </p>
 
-        <a href="#categorias" class="inline-block px-12 py-6 bg-neon text-dark font-black text-2xl rounded-full hover:bg-white transition-all transform hover:scale-110 shadow-2xl">
+        <a href="#categorias" class="hero-button">
           Começar agora
         </a>
       </div>
 
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce pointer-events-none">
-        <svg class="w-10 h-10 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="hero-scroll-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
         </svg>
       </div>
     </section>
 
-    <!-- ================= CATEGORIAS ================= -->
-    <section id="categorias" class="py-24 px-6 max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <section id="categorias" class="categories">
+      <div class="categories-grid">
 
-        <!-- Card 1 -->
-        <a href="atalhos.html" class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 group">
-          <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
-            <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="atalhos.html" class="category-card card-hover group">
+          <div class="category-icon-wrapper">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
             </svg>
           </div>
-          <h3 class="text-3xl font-black mb-4">Atalhos</h3>
-          <p class="text-gray-400 text-lg">Teclas que te fazem trabalhar 10× mais rápido</p>
+          <h3>Atalhos</h3>
+          <p>Teclas que te fazem trabalhar 10× mais rápido</p>
         </a>
 
-        <!-- Card 2 -->
-        <a href="desempenho.html" class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 group">
-          <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
-            <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="desempenho.html" class="category-card card-hover group">
+          <div class="category-icon-wrapper">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h3 class="text-3xl font-black mb-4">Desempenho</h3>
-          <p class="text-gray-400 text-lg">Acelere o boot, limpe RAM e pare processos inúteis</p>
+          <h3>Desempenho</h3>
+          <p>Acelere o boot, limpe RAM e pare processos inúteis</p>
         </a>
 
-        <!-- Card 3 -->
-        <a href="seguranca.html" class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 group">
-          <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
-            <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <a href="seguranca.html" class="category-card card-hover group">
+          <div class="category-icon-wrapper">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
-          <h3 class="text-3xl font-black mb-4">Segurança</h3>
-          <p class="text-gray-400 text-lg">Detecte vírus, proteja sua privacidade e faça backup rápido</p>
+          <h3>Segurança</h3>
+          <p>Detecte vírus, proteja sua privacidade e faça backup rápido</p>
         </a>
 
-        <!-- Card 4 -->
-        <a href="personalizacao.html" class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 group">
-          <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
-            <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="personalizacao.html" class="category-card card-hover group">
+          <div class="category-icon-wrapper">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-.657.657"/>
             </svg>
           </div>
-          <h3 class="text-3xl font-black mb-4">Personalização</h3>
-          <p class="text-gray-400 text-lg">Tema escuro, barra transparente e ícones incríveis</p>
+          <h3>Personalização</h3>
+          <p>Tema escuro, barra transparente e ícones incríveis</p>
         </a>
 
-        <!-- Card 5 -->
-        <a href="ferramentas.html" class="card-hover bg-card/60 backdrop-blur-xl rounded-3xl p-10 border border-white/10 group">
-          <div class="w-20 h-20 bg-neon/20 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition">
-            <svg class="w-12 h-12 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="ferramentas.html" class="category-card card-hover group">
+          <div class="category-icon-wrapper">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
           </div>
-          <h3 class="text-3xl font-black mb-4">Ferramentas Escondidas</h3>
-          <p class="text-gray-400 text-lg">God Mode, diagnósticos secretos e comandos ocultos</p>
+          <h3>Ferramentas Escondidas</h3>
+          <p>God Mode, diagnósticos secretos e comandos ocultos</p>
         </a>
 
       </div>
@@ -158,9 +129,8 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="py-16 text-center text-gray-500 border-t border-white/10">
-    <p class="text-lg">
+  <footer class="footer">
+    <p>
       © 2025 Meu PC — Aprenda a dominar o Windows sem complicação
     </p>
   </footer>
