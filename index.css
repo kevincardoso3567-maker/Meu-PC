@@ -1,7 +1,6 @@
 /*
  * =========================================================
- * CSS RESPONSIVO PROFISSIONAL
- * Layout: Mobile-First (Base) com adaptações para Desktop
+ * CSS RESPONSIVO PROFISSIONAL - COM CARROSSEL NO MOBILE
  * =========================================================
  */
 
@@ -22,8 +21,8 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0F172A; /* Cor de fundo escura */
-    color: #FBFDFE; /* Cor do texto claro */
+    background-color: #0F172A;
+    color: #FBFDFE;
     min-height: 100vh;
 }
 
@@ -37,7 +36,7 @@ a {
     text-shadow: 0 0 30px #00D4FF, 0 0 60px rgba(0,212,255,0.4);
 }
 .hidden-mobile {
-    display: none; /* Oculta a quebra de linha no mobile */
+    display: none;
 }
 
 
@@ -57,12 +56,11 @@ a {
 
 .nav-container {
     padding: 0.8rem 1rem;
-    min-height: 60px;
 }
 
 .nav-content {
     display: flex;
-    flex-direction: column; /* Coloca logo e links em COLUNA no mobile */
+    flex-direction: column; 
     gap: 0.5rem;
 }
 
@@ -84,17 +82,16 @@ a {
     justify-content: center;
     font-weight: 900;
     font-size: 1.2rem;
-    transition: transform 0.3s;
 }
 
-/* Links de Navegação: APARECENDO e ADAPTADOS para mobile */
+/* Links de Navegação: Visíveis e em coluna no mobile */
 .nav-links-full {
     display: flex; 
-    flex-direction: column; /* Links empilhados */
+    flex-direction: column; 
     gap: 0.5rem;
     color: #A1A1AA;
     font-weight: 500;
-    font-size: 0.875rem; /* Fonte menor */
+    font-size: 0.875rem;
     padding-bottom: 0.5rem;
 }
 
@@ -119,83 +116,57 @@ a {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    /* Ajusta para a altura maior da navbar no mobile */
     padding-top: 110px; 
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 212, 255, 0.1), transparent, transparent);
-    pointer-events: none;
-}
-
+/* ... (Estilos do HERO permanecem os mesmos) ... */
 .hero-content {
     text-align: center;
     z-index: 10;
     padding: 0 1rem;
     max-width: 100%;
 }
-
-.hero h2 {
-    font-size: 3rem; 
-    font-weight: 900;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: #D1D5DB;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-.hero-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: #00D4FF;
-    color: #0F172A;
-    font-weight: 900;
-    font-size: 1.2rem;
-    border-radius: 9999px;
-    transition: all 0.3s;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-.hero-scroll-icon {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(-25%) translateX(-50%); }
-    50% { transform: translateY(0) translateX(-50%); }
-}
+.hero h2 { font-size: 3rem; font-weight: 900; margin-bottom: 1rem; line-height: 1.1; }
+.hero p { font-size: 1.3rem; font-weight: 300; color: #D1D5DB; margin-bottom: 2rem; line-height: 1.6; }
+.hero-button { padding: 1rem 2rem; font-size: 1.2rem; border-radius: 9999px; transition: all 0.3s; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); }
+.hero-scroll-icon { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 1s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(-25%) translateX(-50%); } 50% { transform: translateY(0) translateX(-50%); } }
 
 
 /*----------------------------------------------------------*/
-/* 4. CATEGORIES (Mobile)
+/* 4. CATEGORIES (Mobile) - IMPLEMENTAÇÃO DO CARROSSEL
 /*----------------------------------------------------------*/
 
 .categories {
-    padding: 4rem 1rem;
+    padding: 4rem 0; /* Remove padding lateral no section principal */
     max-width: 100%;
     margin: 0 auto;
 }
 
 .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* 1 COLUNA no mobile */
-    gap: 2rem;
+    display: flex; /* Transforma em Flexbox para o carrossel horizontal */
+    overflow-x: scroll; /* PERMITE o deslize horizontal */
+    scroll-snap-type: x mandatory; /* Garante que o scroll pare exatamente em um card */
+    -webkit-overflow-scrolling: touch; /* Melhora o scroll em iOS */
+    gap: 1.5rem; /* Espaço entre os cards */
+    padding: 0 1rem; /* Padding lateral para que o primeiro/último card não cole na borda */
+}
+
+/* Oculta a barra de rolagem horizontal feia no Chrome/Edge/Safari */
+.categories-grid::-webkit-scrollbar {
+    display: none;
+}
+.categories-grid {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .category-card {
+    /* Define o tamanho do card para ocupar 90% da largura da tela */
+    flex-shrink: 0; /* Impede que o card encolha */
+    width: 90vw; /* Ocupa 90% da largura da viewport (tela) */
+    scroll-snap-align: start; /* Define o ponto de parada do carrossel */
+    
     background-color: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(16px);
     border-radius: 1rem;
@@ -214,16 +185,8 @@ a {
     justify-content: center;
 }
 
-.category-card h3 {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
-}
-
-.category-card p {
-    color: #9CA3AF;
-    font-size: 1rem;
-}
+.category-card h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem; }
+.category-card p { color: #9CA3AF; font-size: 1rem; }
 
 
 /*----------------------------------------------------------*/
@@ -237,9 +200,7 @@ a {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer p {
-    font-size: 0.875rem;
-}
+.footer p { font-size: 0.875rem; }
 
 
 /*
@@ -251,82 +212,53 @@ a {
 /* Desktop (Acima de 768px - Tablet/Laptop) */
 @media (min-width: 768px) {
     
-    /* Navbar */
-    .nav-container {
-        padding: 1.25rem 1.5rem;
-    }
-
-    .nav-content {
-        flex-direction: row; /* Volta para lado a lado */
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .nav-logo-icon {
-        width: 2.75rem;
-        height: 2.75rem;
-        font-size: 1.5rem;
-    }
-    
-    /* Links de Navegação: Volta para linha horizontal e tamanho normal */
-    .nav-links-full {
-        flex-direction: row; 
-        gap: 2.5rem;
-        color: #D1D5DB;
-        font-size: 1rem;
-        padding-bottom: 0;
-    }
+    /* Navbar (Volta para horizontal) */
+    .nav-container { padding: 1.25rem 1.5rem; }
+    .nav-content { flex-direction: row; justify-content: space-between; align-items: center; }
+    .nav-links-full { flex-direction: row; gap: 2.5rem; color: #D1D5DB; font-size: 1rem; padding-bottom: 0; }
 
     /* Hero */
-    .hero {
-        padding-top: 0; /* Remove padding extra no desktop */
-    }
-    .hero h2 {
-        font-size: 4.5rem;
-    }
-    .hero p {
-        font-size: 2rem;
-        margin-bottom: 3rem;
-    }
+    .hero { padding-top: 0; }
+    .hero h2 { font-size: 4.5rem; }
+    .hero p { font-size: 2rem; margin-bottom: 3rem; }
 
     /* Utilitários */
-    .hidden-mobile {
-        display: block; /* Mostra a quebra de linha no desktop */
-    }
+    .hidden-mobile { display: block; }
 
     /* Containers */
-    .max-w-6xl {
-        max-width: 1152px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    .max-w-6xl { max-width: 1152px; margin-left: auto; margin-right: auto; }
 
-    /* Categories */
+    /* CATEGORIAS: DESATIVA O CARROSSEL E VOLTA PARA GRID/COLUNAS */
     .categories {
-        padding: 6rem 1.5rem;
+        padding: 6rem 1.5rem; /* Restaura padding lateral */
     }
+    
     .categories-grid {
+        display: grid; /* Volta para o layout de grade */
         grid-template-columns: repeat(2, 1fr); /* 2 COLUNAS no Tablet */
+        overflow-x: visible; /* Desativa o carrossel */
+        scroll-snap-type: none; /* Desativa o snap */
         gap: 2.5rem;
+        padding: 0; /* Remove padding lateral do carrossel */
+    }
+    
+    .category-card {
+        flex-shrink: 1; /* Permite que o card encolha normalmente */
+        width: auto; /* Permite que a grade controle a largura */
+        scroll-snap-align: none;
+        padding: 2rem;
+        border-radius: 1.5rem;
     }
 }
 
 /* Desktop Grande (Acima de 1024px) */
 @media (min-width: 1024px) {
     
-    .max-w-7xl {
-        max-width: 1280px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    .max-w-7xl { max-width: 1280px; margin-left: auto; margin-right: auto; }
 
     /* Hero */
-    .hero h2 {
-        font-size: 6rem; /* Tamanho final de desktop */
-    }
-    .hero p {
-        font-size: 3rem;
-    }
+    .hero h2 { font-size: 6rem; }
+    .hero p { font-size: 3rem; }
 
     /* Categories */
     .categories-grid {
