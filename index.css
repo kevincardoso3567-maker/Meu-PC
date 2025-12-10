@@ -1,11 +1,14 @@
 /*
- * index.css
- * TOTALMENTE RESPONSIVO: Mobile-First com a barra de navegação visível.
+ * =========================================================
+ * CSS RESPONSIVO PROFISSIONAL
+ * Layout: Mobile-First (Base) com adaptações para Desktop
+ * =========================================================
  */
 
-/* ========================================================= */
-/* ===== BASE (MOBILE-FIRST) E ESTILOS GERAIS ===== */
-/* ========================================================= */
+
+/*----------------------------------------------------------*/
+/* 1. BASE E REGRAS GERAIS (MOBILE-FIRST)
+/*----------------------------------------------------------*/
 
 * {
     margin: 0;
@@ -19,43 +22,34 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0F172A; /* dark */
-    color: #FBFDFE; /* text-white */
+    background-color: #0F172A; /* Cor de fundo escura */
+    color: #FBFDFE; /* Cor do texto claro */
     min-height: 100vh;
 }
 
-/* Links */
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* Classes Customizadas do HTML */
+/* Utilitários */
 .glow {
     text-shadow: 0 0 30px #00D4FF, 0 0 60px rgba(0,212,255,0.4);
 }
-
-.card-hover {
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-}
-.card-hover:hover {
-    transform: translateY(-14px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0,212,255,0.15);
-    border-color: #00D4FF !important;
-}
-
-/* Utilitário para ocultar APENAS no Desktop */
 .hidden-mobile {
-    display: none;
+    display: none; /* Oculta a quebra de linha no mobile */
 }
 
 
-/* ===== NAVBAR (Mobile - Padrão) ===== */
+/*----------------------------------------------------------*/
+/* 2. NAVBAR (Mobile)
+/*----------------------------------------------------------*/
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(15, 23, 42, 0.95); /* Aumentei a opacidade para melhor leitura */
+    background-color: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(12px);
     z-index: 50;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -66,11 +60,10 @@ a {
     min-height: 60px;
 }
 
-/* Novo container para o conteúdo do nav, ajustado para mobile */
 .nav-content {
     display: flex;
-    flex-direction: column; /* Coloca o logo e os links em coluna no mobile */
-    gap: 0.5rem; /* Espaçamento entre logo e links */
+    flex-direction: column; /* Coloca logo e links em COLUNA no mobile */
+    gap: 0.5rem;
 }
 
 .nav-logo {
@@ -94,19 +87,19 @@ a {
     transition: transform 0.3s;
 }
 
-/* CORREÇÃO CRÍTICA: Links visíveis, em coluna e menores para caberem */
+/* Links de Navegação: APARECENDO e ADAPTADOS para mobile */
 .nav-links-full {
     display: flex; 
-    flex-direction: column; /* Links em coluna no mobile */
-    gap: 0.5rem; /* Espaçamento entre os links */
-    color: #A1A1AA; /* text-zinc-400 */
+    flex-direction: column; /* Links empilhados */
+    gap: 0.5rem;
+    color: #A1A1AA;
     font-weight: 500;
-    font-size: 0.875rem; /* text-sm */
+    font-size: 0.875rem; /* Fonte menor */
     padding-bottom: 0.5rem;
 }
 
 .nav-links-full a {
-    padding: 0.2rem 0; /* Espaçamento vertical para os links */
+    padding: 0.2rem 0;
     transition: color 0.3s;
 }
 
@@ -115,8 +108,10 @@ a {
 }
 
 
-/* ===== HERO SECTION (Mobile - Padrão) ===== */
-/* (Estilos permanecem os mesmos do passo anterior, pois já estavam responsivos) */
+/*----------------------------------------------------------*/
+/* 3. HERO SECTION (Mobile)
+/*----------------------------------------------------------*/
+
 .hero {
     height: 100vh;
     display: flex;
@@ -124,7 +119,7 @@ a {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    /* Ajustei o padding-top para compensar o tamanho maior da navbar no mobile */
+    /* Ajusta para a altura maior da navbar no mobile */
     padding-top: 110px; 
 }
 
@@ -139,13 +134,12 @@ a {
 .hero-content {
     text-align: center;
     z-index: 10;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
     max-width: 100%;
 }
 
 .hero h2 {
-    font-size: 3rem;
+    font-size: 3rem; 
     font-weight: 900;
     margin-bottom: 1rem;
     line-height: 1.1;
@@ -159,11 +153,6 @@ a {
     line-height: 1.6;
 }
 
-.hero p span {
-    color: #00D4FF;
-    font-weight: 700;
-}
-
 .hero-button {
     display: inline-block;
     padding: 1rem 2rem;
@@ -172,13 +161,8 @@ a {
     font-weight: 900;
     font-size: 1.2rem;
     border-radius: 9999px;
-    transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
+    transition: all 0.3s;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-.hero-button:hover {
-    background-color: #FFFFFF;
-    transform: scale(1.05);
 }
 
 .hero-scroll-icon {
@@ -186,7 +170,6 @@ a {
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    pointer-events: none;
     animation: bounce 1s infinite;
 }
 
@@ -195,26 +178,20 @@ a {
     50% { transform: translateY(0) translateX(-50%); }
 }
 
-.hero-scroll-icon svg {
-    width: 2rem;
-    height: 2rem;
-    color: #00D4FF;
-    stroke-width: 2;
-}
 
+/*----------------------------------------------------------*/
+/* 4. CATEGORIES (Mobile)
+/*----------------------------------------------------------*/
 
-/* ===== CATEGORIES SECTION (Mobile - Padrão) ===== */
-/* (Estilos permanecem os mesmos do passo anterior) */
 .categories {
     padding: 4rem 1rem;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr); /* 1 COLUNA no mobile */
     gap: 2rem;
 }
 
@@ -231,18 +208,10 @@ a {
     height: 4rem;
     background-color: rgba(0, 212, 255, 0.2);
     border-radius: 0.75rem;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    transition: transform 0.3s;
-}
-
-.category-icon-wrapper svg {
-    width: 2.5rem;
-    height: 2.5rem;
-    color: #00D4FF;
-    stroke-width: 2;
 }
 
 .category-card h3 {
@@ -257,7 +226,10 @@ a {
 }
 
 
-/* ===== FOOTER (Mobile - Padrão) ===== */
+/*----------------------------------------------------------*/
+/* 5. FOOTER (Mobile)
+/*----------------------------------------------------------*/
+
 .footer {
     padding: 2rem 1rem;
     text-align: center;
@@ -270,23 +242,24 @@ a {
 }
 
 
-/* ========================================================= */
-/* ===== RESPONSIVIDADE (ADAPTAÇÕES PARA TABLET E DESKTOP) ===== */
-/* ========================================================= */
+/*
+ * =========================================================
+ * ADAPTAÇÕES PARA DESKTOP (MEDIA QUERIES)
+ * =========================================================
+ */
 
-/* Tablet e Desktop (Acima de 768px - Breakpoint 'md') */
+/* Desktop (Acima de 768px - Tablet/Laptop) */
 @media (min-width: 768px) {
+    
     /* Navbar */
     .nav-container {
         padding: 1.25rem 1.5rem;
-        min-height: auto; /* Altura auto para desktop */
     }
 
     .nav-content {
-        flex-direction: row; /* Coloca logo e links lado a lado */
+        flex-direction: row; /* Volta para lado a lado */
         justify-content: space-between;
         align-items: center;
-        gap: 0;
     }
     
     .nav-logo-icon {
@@ -295,32 +268,19 @@ a {
         font-size: 1.5rem;
     }
     
-    /* Links de Navegação: Volta para linha horizontal e aumenta o tamanho */
+    /* Links de Navegação: Volta para linha horizontal e tamanho normal */
     .nav-links-full {
-        display: flex; 
-        flex-direction: row; /* Links em linha horizontal */
+        flex-direction: row; 
         gap: 2.5rem;
         color: #D1D5DB;
-        font-weight: 500;
-        font-size: 1rem; /* Volta ao tamanho normal */
+        font-size: 1rem;
         padding-bottom: 0;
     }
 
-    .hero {
-        padding-top: 0; /* Remove padding extra, navbar é mais baixa */
-    }
-
-    /* Utilitário para ocultar elementos APENAS no Mobile */
-    .hidden-mobile {
-        display: block;
-    }
-
-    /* Containers */
-    .max-w-6xl {
-        max-width: 1152px;
-    }
-
     /* Hero */
+    .hero {
+        padding-top: 0; /* Remove padding extra no desktop */
+    }
     .hero h2 {
         font-size: 4.5rem;
     }
@@ -329,46 +289,40 @@ a {
         margin-bottom: 3rem;
     }
 
+    /* Utilitários */
+    .hidden-mobile {
+        display: block; /* Mostra a quebra de linha no desktop */
+    }
+
+    /* Containers */
+    .max-w-6xl {
+        max-width: 1152px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     /* Categories */
     .categories {
         padding: 6rem 1.5rem;
     }
     .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 COLUNAS no Tablet */
         gap: 2.5rem;
-    }
-    .category-card {
-        padding: 2rem;
-        border-radius: 1.5rem;
-    }
-    .category-icon-wrapper {
-        width: 5rem;
-        height: 5rem;
-        margin-bottom: 2rem;
-    }
-    .category-card h3 {
-        font-size: 1.875rem;
-    }
-    .category-card p {
-        font-size: 1.125rem;
-    }
-    
-    /* Footer */
-    .footer p {
-        font-size: 1.125rem;
     }
 }
 
-/* Desktop (Acima de 1024px) */
+/* Desktop Grande (Acima de 1024px) */
 @media (min-width: 1024px) {
     
     .max-w-7xl {
         max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* Hero */
     .hero h2 {
-        font-size: 6rem;
+        font-size: 6rem; /* Tamanho final de desktop */
     }
     .hero p {
         font-size: 3rem;
@@ -376,7 +330,7 @@ a {
 
     /* Categories */
     .categories-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* 3 COLUNAS no Desktop */
         gap: 3rem;
     }
     
