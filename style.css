@@ -1,80 +1,121 @@
-/* ====== SEU CSS ORIGINAL (mantido igual) ====== */
-/* (cole aqui tudo que eu te mandei antes, até o final do .shortcut-card p) */
+/* ... Seu código CSS anterior (mantido) ... */
+.shortcut-card h4, .tip-card h4 {
+  font-size:1.35rem;
+  font-weight:700;
+  margin-bottom:0; 
+  word-wrap: break-word; 
+}
+/* ... Seu código CSS anterior (mantido) ... */
+.footer {
+  padding:4rem 1.25rem 2rem;
+  text-align:center;
+  color:#64748B;
+  font-size:1rem;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
 
-/* ====== APENAS CELULAR (até 480px) ====== */
+/* ========================================================= */
+/* ===== RESPONSIVO MODO DESK-TO-CHROME (AJUSTADO) ===== */
+/* ========================================================= */
+
+/* Ajustes para Tablets (MÁX. 1024px) */
+@media (max-width: 1024px) {
+  .hero h2 { font-size:3.8rem; }
+  .hero .subtitle { font-size:1.8rem; }
+  
+  /* Ajuste no Card de Atalho para tentar manter o layout horizontal por mais tempo */
+  .shortcut-card, .tip-card {
+    /* Mantém o flex horizontal, mas permite que o conteúdo se ajuste */
+    flex-direction:row; 
+    align-items:flex-start; /* Alinha o conteúdo ao topo do card */
+    padding: 1.5rem;
+  }
+  .shortcut-card kbd {
+    min-width: 120px; /* Garante que a tecla Fx tenha um tamanho mínimo */
+    max-width: 120px;
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+    margin-right: 1rem; /* Adiciona margem à direita da tecla */
+  }
+  .shortcut-card h4, .tip-card h4 {
+    text-align: left; /* Garante que o texto se alinhe à esquerda, como no desktop */
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+}
+
+/* Ponto de Ruptura Principal para Celulares e Tablets em modo retrato (MÁX. 768px) */
+@media (max-width: 768px) {
+  /* NAV BAR (Modo Compacto de "Barra de Ferramentas") */
+  .nav-links { 
+    display:none !important; 
+  } 
+  .mobile-menu-btn { display:block; } 
+  .nav-container { padding:0.8rem 1rem; height:60px; } /* Mais compacto */
+  .mobile-menu { top:60px; } 
+  
+  /* HERO */
+  .hero { padding-top:7rem; min-height:75vh; }
+  .hero h2 { font-size:2.6rem; } /* Fonte menor */
+  .hero .subtitle { font-size:1.3rem; max-width:100%; }
+  .btn-primary { padding:0.8rem 2rem; font-size:1.1rem; }
+
+  /* CONTEÚDO E ATALHOS - FORÇANDO COLUNA APENAS AQUI */
+  .page-header h2 { font-size:2.2rem; }
+  .shortcuts, .tips { padding:0 1rem 4rem; }
+
+  /* Cartões de Atalhos em COLUNA (necessário para o celular) */
+  .shortcut-card, .tip-card {
+    flex-direction:column; /* Coloca kbd e h4 em linhas separadas */
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    gap:0.8rem; /* Espaço reduzido */
+    padding:1.2rem;
+  }
+  .shortcut-card kbd {
+    min-width:auto;
+    width:80%; 
+    max-width:250px; 
+    font-size:1.0rem;
+    margin-right: 0; /* Remove margem lateral */
+    margin-bottom: 0.5rem; /* Espaçamento entre a tecla e o texto */
+  }
+  /* Garante que o container do texto ocupa a largura total para centralização */
+  .shortcut-card h4, .tip-card h4 {
+    font-size:1.15rem;
+    margin-bottom:0;
+    text-align: center;
+    white-space: normal; 
+    line-height: 1.4;
+  }
+}
+
+/* Ajustes Finais para Celulares Pequenos (MÁX. 480px) */
 @media (max-width: 480px) {
-    header {
-        padding: 12px 0;
-    }
+  .container { padding:0 0.6rem; } /* Padding ainda menor */
+  
+  /* NAV BAR (Mais compacta) */
+  .nav-container { height:50px; padding:0.5rem 0.6rem; }
+  .logo { font-size:1.3rem; gap:3px; } 
+  .pc-icon { width:30px; height:30px; font-size:0.8rem; border-radius:6px; } 
+  .mobile-menu { top:50px; } 
+  .mobile-menu-btn { font-size:1.6rem; }
 
-    header .logo-icon {
-        width: 38px;
-        height: 38px;
-        font-size: 19px;
-    }
+  /* HERO */
+  .hero h2 { font-size:1.8rem; } 
+  .hero .subtitle { font-size:1.0rem; } 
+  .btn-primary { padding:0.7rem 1.8rem; font-size:0.9rem; }
 
-    .page-title {
-        margin-top: 16px;
-        padding: 0 12px;
-    }
-
-    .page-title h1 {
-        font-size: 1.9rem;
-        line-height: 1.2;
-    }
-
-    .page-title p {
-        font-size: 1.05rem;
-        margin-top: 8px;
-    }
-
-    .search-wrapper {
-        margin: 22px 12px 0;
-    }
-
-    .search-wrapper input {
-        padding: 15px 50px 15px 18px;
-        font-size: 16px; /* evita zoom no iOS */
-    }
-
-    .search-wrapper svg {
-        width: 22px;
-        height: 22px;
-        right: 16px;
-    }
-
-    .section-title {
-        margin-top: 36px;
-        font-size: 1.55rem;
-        padding: 0 12px;
-    }
-
-    .nav-scroll {
-        gap: 14px;
-        padding: 10px 0;
-    }
-
-    .nav-scroll a {
-        font-size: 0.95rem;
-        padding: 6px 10px; /* melhor área de toque */
-    }
-
-    /* Cards em coluna e centralizados */
-    .shortcut-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 16px;
-        margin: 14px 12px 0;
-        gap: 12px;
-    }
-
-    .shortcut-card .key {
-        padding: 12px 30px;
-        font-size: 1.35rem;
-    }
-
-    .shortcut-card p {
-        font-size: 1.05rem;
-        min-width: 0;
-    }
+  /* CONTEÚDO */
+  .page-header h2 { font-size:1.6rem; } 
+  .shortcuts, .tips { padding:0 0.6rem 3rem; }
+  
+  .shortcut-card kbd { 
+      font-size:0.85rem; 
+      padding:0.6rem 0.8rem; 
+      width:90%; 
+  } 
+  .shortcut-card h4, .tip-card h4 { font-size:1.0rem; } 
+  .footer { font-size:0.8rem; padding:2rem 0.6rem 1rem; }
 }
