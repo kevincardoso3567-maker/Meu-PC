@@ -226,10 +226,12 @@ a { text-decoration:none; color:inherit; }
   min-width:140px;
   text-align:center;
 }
+/* CORREÇÃO APLICADA: Remove margem inferior padrão e permite quebra de linha */
 .shortcut-card h4, .tip-card h4 {
   font-size:1.35rem;
   font-weight:700;
-  margin-bottom:0.4rem;
+  margin-bottom:0; 
+  word-wrap: break-word; 
 }
 
 /* ===== FOOTER ===== */
@@ -242,7 +244,7 @@ a { text-decoration:none; color:inherit; }
 }
 
 /* ========================================================= */
-/* ===== RESPONSIVO PERFEITO (AJUSTADO) ===== */
+/* ===== RESPONSIVO PERFEITO (AJUSTADO FINALMENTE) ===== */
 /* ========================================================= */
 
 /* Ajustes para Tablets (MÁX. 1024px) */
@@ -255,7 +257,6 @@ a { text-decoration:none; color:inherit; }
 @media (max-width: 768px) {
   /* NAV BAR E MOBILE MENU */
   .nav-links { 
-    /* Esta é a correção chave para garantir que o menu desktop some */
     display:none !important; 
   } 
   .mobile-menu-btn { display:block; } 
@@ -273,22 +274,32 @@ a { text-decoration:none; color:inherit; }
   .page-header h2 { font-size:2.4rem; }
   .shortcuts, .tips { padding:0 1.25rem 4rem; }
 
-  /* Cartões de Atalhos em Coluna */
+  /* CORREÇÃO CHAVE: Forçando o layout em coluna e centralizando o conteúdo do card */
   .shortcut-card, .tip-card {
-    flex-direction:column;
+    flex-direction:column; /* Coloca kbd e h4 em linhas separadas */
     text-align:center;
+    justify-content:center;
+    align-items:center;
     gap:1rem;
     padding:1.5rem;
   }
   .shortcut-card kbd {
     min-width:auto;
-    width:100%; 
+    width:90%; 
     max-width:300px; 
     font-size:1.1rem;
+    margin-bottom: 0.5rem; /* Espaçamento entre a tecla e o texto */
+  }
+  /* Garante que o container do texto ocupa a largura total para centralização */
+  .shortcut-card > div {
+      width: 100%;
+      text-align: center;
   }
   .shortcut-card h4, .tip-card h4 {
     font-size:1.25rem;
     margin-bottom:0;
+    text-align: center;
+    white-space: normal; /* Permite que o texto quebre a linha em vez de cortar */
   }
 }
 
@@ -296,21 +307,26 @@ a { text-decoration:none; color:inherit; }
 @media (max-width: 480px) {
   .container { padding:0 0.8rem; }
   
-  /* NAV BAR (Ajustes de tamanhos para evitar corte) */
+  /* NAV BAR (Ajustes de tamanhos para evitar corte no topo) */
   .nav-container { height:55px; padding:0.6rem 0.8rem; }
-  .logo { font-size:1.4rem; gap:4px; } /* Reduzido de 1.6rem para 1.4rem */
-  .pc-icon { width:32px; height:32px; font-size:0.9rem; border-radius:8px; } /* Reduzido de 35px para 32px */
+  .logo { font-size:1.4rem; gap:4px; } 
+  .pc-icon { width:32px; height:32px; font-size:0.9rem; border-radius:8px; } 
   .mobile-menu { top:55px; } 
   .mobile-menu-btn { font-size:1.8rem; }
 
   /* HERO (Ajustes de fontes para evitar corte) */
-  .hero h2 { font-size:2.0rem; } /* Reduzido de 2.2rem para 2.0rem */
-  .hero .subtitle { font-size:1.1rem; } /* Reduzido de 1.2rem para 1.1rem */
+  .hero h2 { font-size:2.0rem; } 
+  .hero .subtitle { font-size:1.1rem; } 
   .btn-primary { padding:0.8rem 2rem; font-size:1.0rem; }
 
   /* CONTEÚDO */
-  .page-header h2 { font-size:1.8rem; } /* Reduzido de 2rem para 1.8rem */
-  .shortcut-card kbd { font-size:0.9rem; padding:0.7rem 1rem; } /* Reduzido para fontes menores */
-  .shortcut-card h4, .tip-card h4 { font-size:1.05rem; } /* Reduzido para fontes menores */
+  .page-header h2 { font-size:1.8rem; } 
+  .shortcut-card kbd { 
+      font-size:0.9rem; 
+      padding:0.7rem 1rem; 
+      width:100%; 
+      max-width: none; /* Permite que o kbd se estique mais um pouco */
+  } 
+  .shortcut-card h4, .tip-card h4 { font-size:1.05rem; } 
   .footer { font-size:0.9rem; padding:3rem 0.8rem 1.5rem; }
 }
