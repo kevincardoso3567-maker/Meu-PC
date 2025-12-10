@@ -1,6 +1,6 @@
 /*
  * index.css
- * TOTALMENTE RESPONSIVO: Mobile-First com adaptações para Desktop.
+ * TOTALMENTE RESPONSIVO: Mobile-First com a barra de navegação visível.
  */
 
 /* ========================================================= */
@@ -44,7 +44,7 @@ a {
     border-color: #00D4FF !important;
 }
 
-/* Utilitário para ocultar elementos APENAS no Desktop */
+/* Utilitário para ocultar APENAS no Desktop */
 .hidden-mobile {
     display: none;
 }
@@ -55,18 +55,22 @@ a {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(15, 23, 42, 0.90);
+    background-color: rgba(15, 23, 42, 0.95); /* Aumentei a opacidade para melhor leitura */
     backdrop-filter: blur(12px);
     z-index: 50;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-container {
-    display: flex; /* Garante que logo e links estejam na mesma linha */
-    justify-content: space-between; /* Espaçamento entre logo e links */
-    align-items: center;
-    padding: 0.8rem 1rem; /* Padding ajustado para mobile */
+    padding: 0.8rem 1rem;
     min-height: 60px;
+}
+
+/* Novo container para o conteúdo do nav, ajustado para mobile */
+.nav-content {
+    display: flex;
+    flex-direction: column; /* Coloca o logo e os links em coluna no mobile */
+    gap: 0.5rem; /* Espaçamento entre logo e links */
 }
 
 .nav-logo {
@@ -90,17 +94,29 @@ a {
     transition: transform 0.3s;
 }
 
-.nav-logo-icon:hover {
-    transform: scale(1.1);
+/* CORREÇÃO CRÍTICA: Links visíveis, em coluna e menores para caberem */
+.nav-links-full {
+    display: flex; 
+    flex-direction: column; /* Links em coluna no mobile */
+    gap: 0.5rem; /* Espaçamento entre os links */
+    color: #A1A1AA; /* text-zinc-400 */
+    font-weight: 500;
+    font-size: 0.875rem; /* text-sm */
+    padding-bottom: 0.5rem;
 }
 
-/* Oculta os links de navegação no mobile */
-.nav-links-desktop {
-    display: none; 
+.nav-links-full a {
+    padding: 0.2rem 0; /* Espaçamento vertical para os links */
+    transition: color 0.3s;
+}
+
+.nav-links-full a:hover {
+    color: #00D4FF;
 }
 
 
 /* ===== HERO SECTION (Mobile - Padrão) ===== */
+/* (Estilos permanecem os mesmos do passo anterior, pois já estavam responsivos) */
 .hero {
     height: 100vh;
     display: flex;
@@ -108,7 +124,8 @@ a {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding-top: 60px; /* Compensa a altura da navbar */
+    /* Ajustei o padding-top para compensar o tamanho maior da navbar no mobile */
+    padding-top: 110px; 
 }
 
 .hero::before {
@@ -128,14 +145,14 @@ a {
 }
 
 .hero h2 {
-    font-size: 3rem; /* Tamanho reduzido para mobile */
+    font-size: 3rem;
     font-weight: 900;
     margin-bottom: 1rem;
     line-height: 1.1;
 }
 
 .hero p {
-    font-size: 1.3rem; /* Tamanho reduzido para mobile */
+    font-size: 1.3rem;
     font-weight: 300;
     color: #D1D5DB;
     margin-bottom: 2rem;
@@ -187,8 +204,9 @@ a {
 
 
 /* ===== CATEGORIES SECTION (Mobile - Padrão) ===== */
+/* (Estilos permanecem os mesmos do passo anterior) */
 .categories {
-    padding: 4rem 1rem; /* Padding ajustado para mobile */
+    padding: 4rem 1rem;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -196,15 +214,15 @@ a {
 
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* 1 coluna no mobile */
-    gap: 2rem; /* Espaçamento reduzido */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
 }
 
 .category-card {
     background-color: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(16px);
     border-radius: 1rem;
-    padding: 1.5rem; /* Padding reduzido */
+    padding: 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -228,27 +246,27 @@ a {
 }
 
 .category-card h3 {
-    font-size: 1.5rem; /* Tamanho reduzido */
+    font-size: 1.5rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
 }
 
 .category-card p {
     color: #9CA3AF;
-    font-size: 1rem; /* Tamanho reduzido */
+    font-size: 1rem;
 }
 
 
 /* ===== FOOTER (Mobile - Padrão) ===== */
 .footer {
-    padding: 2rem 1rem; /* Padding ajustado */
+    padding: 2rem 1rem;
     text-align: center;
     color: #6B7280;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer p {
-    font-size: 0.875rem; /* Tamanho reduzido */
+    font-size: 0.875rem;
 }
 
 
@@ -260,8 +278,15 @@ a {
 @media (min-width: 768px) {
     /* Navbar */
     .nav-container {
-        padding: 1.25rem 1.5rem; /* Padding de desktop */
+        padding: 1.25rem 1.5rem;
+        min-height: auto; /* Altura auto para desktop */
+    }
+
+    .nav-content {
+        flex-direction: row; /* Coloca logo e links lado a lado */
         justify-content: space-between;
+        align-items: center;
+        gap: 0;
     }
     
     .nav-logo-icon {
@@ -270,16 +295,19 @@ a {
         font-size: 1.5rem;
     }
     
-    /* Mostrar menu de atalhos no Desktop */
-    .nav-links-desktop {
+    /* Links de Navegação: Volta para linha horizontal e aumenta o tamanho */
+    .nav-links-full {
         display: flex; 
+        flex-direction: row; /* Links em linha horizontal */
         gap: 2.5rem;
         color: #D1D5DB;
         font-weight: 500;
+        font-size: 1rem; /* Volta ao tamanho normal */
+        padding-bottom: 0;
     }
-    
-    .nav-links-desktop a:hover {
-        color: #00D4FF;
+
+    .hero {
+        padding-top: 0; /* Remove padding extra, navbar é mais baixa */
     }
 
     /* Utilitário para ocultar elementos APENAS no Mobile */
@@ -287,18 +315,18 @@ a {
         display: block;
     }
 
+    /* Containers */
+    .max-w-6xl {
+        max-width: 1152px;
+    }
 
     /* Hero */
     .hero h2 {
-        font-size: 4.5rem; /* Tamanho de Tablet */
+        font-size: 4.5rem;
     }
     .hero p {
         font-size: 2rem;
         margin-bottom: 3rem;
-    }
-    .hero-button {
-        padding: 1.5rem 3rem;
-        font-size: 1.5rem;
     }
 
     /* Categories */
@@ -306,7 +334,7 @@ a {
         padding: 6rem 1.5rem;
     }
     .categories-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas no Tablet */
+        grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
     }
     .category-card {
@@ -331,25 +359,16 @@ a {
     }
 }
 
-/* Desktop (Acima de 1024px - Breakpoint 'lg' ou max-w-7xl) */
+/* Desktop (Acima de 1024px) */
 @media (min-width: 1024px) {
     
-    /* Containers */
-    .max-w-6xl {
-        max-width: 1152px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .max-w-7xl {
         max-width: 1280px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     /* Hero */
     .hero h2 {
-        font-size: 6rem; /* Tamanho de Desktop */
+        font-size: 6rem;
     }
     .hero p {
         font-size: 3rem;
@@ -357,7 +376,7 @@ a {
 
     /* Categories */
     .categories-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas no Desktop */
+        grid-template-columns: repeat(3, 1fr);
         gap: 3rem;
     }
     
