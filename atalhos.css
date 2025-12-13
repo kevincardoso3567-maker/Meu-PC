@@ -1,20 +1,17 @@
 /*
  * =========================================================
- * atalhos.css - ESTILO COMPLETO E RESPONSIVO (CORRIGIDO)
+ * atalhos.css - ESTILO COMPLETO E RESPONSIVO (ATUALIZADO)
  * =========================================================
  */
 
-/* Variáveis de Cores */
 :root {
-    --color-dark: #0F172A; /* Fundo principal */
-    --color-card: #1E293B; /* Fundo dos cards */
-    --color-neon: #00D4FF; /* Cor de destaque */
+    --color-dark: #0F172A;
+    --color-card: #1E293B;
+    --color-neon: #00D4FF;
     --color-white: #FBFDFE;
     --color-gray-text: #D1D5DB;
     --color-gray-footer: #6B7280;
 }
-
-/* ------------------ 1. BASE E TIPOGRAFIA ------------------ */
 
 * {
     margin: 0;
@@ -35,8 +32,6 @@ a {
     transition: color 0.3s;
 }
 
-/* ------------------ 2. UTILS E EFEITOS ------------------ */
-
 .glow { 
     text-shadow: 0 0 30px var(--color-neon), 0 0 60px rgba(0, 212, 255, 0.4); 
 }
@@ -45,8 +40,7 @@ a {
     display: none !important; 
 }
 
-
-/* ------------------ 3. NAVBAR (Mobile-First) ------------------ */
+/* ================= NAVBAR ================= */
 
 .navbar {
     position: fixed;
@@ -59,7 +53,7 @@ a {
 }
 
 .nav-container {
-    max-width: 72rem; /* Simula max-w-6xl */
+    max-width: 72rem;
     margin: 0 auto;
     padding: 1.25rem 1.5rem; 
 }
@@ -93,9 +87,10 @@ a {
     font-size: 1.5rem; 
 }
 
-/* Links de navegação: OCULTADO NO MOBILE */
 .nav-links {
-    display: none; 
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .nav-link {
@@ -112,8 +107,7 @@ a {
     font-weight: 700;
 }
 
-
-/* ------------------ 4. HERO SECTION (Mobile-First) ------------------ */
+/* ================= HERO ================= */
 
 .hero-section {
     padding: 8rem 1.5rem 4rem; 
@@ -134,19 +128,18 @@ a {
 
 .search-container {
     max-width: 42rem; 
-    margin: 0 auto; /* Centraliza */
-    padding: 0 0.5rem; /* Adiciona um pequeno padding lateral no mobile */
+    margin: 0 auto;
     position: relative;
 }
 
 .search-input {
     width: 100%;
-    padding: 1rem 1.5rem; /* Ajuste para o mobile */
+    padding: 0.9rem 3rem 0.9rem 1.2rem;
     background-color: rgba(30, 41, 59, 0.6); 
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 9999px; 
-    font-size: 1rem; /* Ajuste para o mobile */
+    font-size: 1rem;
     outline: none;
     transition: border 0.3s;
     color: var(--color-white);
@@ -155,7 +148,7 @@ a {
 
 .search-input::placeholder {
     color: #6B7280; 
-    font-size: 0.875rem; /* Ajuste para o mobile */
+    font-size: 0.875rem;
 }
 
 .search-input:focus {
@@ -164,16 +157,15 @@ a {
 
 .search-icon {
     position: absolute;
-    right: 2rem; 
+    right: 1.2rem; 
     top: 50%;
     transform: translateY(-50%);
-    width: 1.5rem; /* Ajuste para o mobile */
-    height: 1.5rem; /* Ajuste para o mobile */
+    width: 1.25rem;
+    height: 1.25rem;
     color: var(--color-neon);
 }
 
-
-/* ------------------ 5. LISTA DE ATALHOS (Mobile-First) ------------------ */
+/* ================= LISTA ================= */
 
 .shortcuts-content {
     padding: 0 1.5rem 6rem; 
@@ -203,18 +195,12 @@ a {
 .shortcut-card {
     display: flex;
     flex-direction: column; 
-    align-items: flex-start;
     gap: 1rem; 
     padding: 1.5rem; 
     background-color: rgba(30, 41, 59, 0.6); 
     backdrop-filter: blur(12px);
     border-radius: 1.5rem; 
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.shortcut-card:hover {
-    border-color: rgba(0, 212, 255, 0.5); 
 }
 
 .shortcut-key {
@@ -232,13 +218,9 @@ a {
 .shortcut-description {
     font-size: 1.25rem; 
     font-weight: 700;
-    margin-bottom: 0.25rem; 
-    flex-grow: 1;
-    min-width: 0;
 }
 
-
-/* ------------------ 6. FOOTER ------------------ */
+/* ================= FOOTER ================= */
 
 .footer {
     padding: 4rem 1.5rem; 
@@ -251,35 +233,24 @@ a {
     font-size: 1.125rem; 
 }
 
-
-/* ------------------ 7. MEDIA QUERIES (Desktop/Tablet) ------------------ */
+/* ================= DESKTOP ================= */
 
 @media (min-width: 768px) {
-    
-    /* Navbar: Exibe links no Desktop */
-    .nav-links {
-        display: flex;
-        gap: 2.5rem; 
-        align-items: center;
+    .nav-header {
+        flex-direction: row;
     }
-    
-    /* Hero */
+
+    .nav-links {
+        gap: 2.5rem;
+    }
+
     .title-main {
         font-size: 4.5rem; 
     }
-    
-    /* Search (Retorna ao tamanho original) */
-    .search-container {
-        padding: 0; 
-    }
-    
+
     .search-input {
         padding: 1.5rem 2rem; 
         font-size: 1.25rem;
-    }
-
-    .search-input::placeholder {
-        font-size: 1.125rem;
     }
 
     .search-icon {
@@ -288,13 +259,8 @@ a {
         height: 2rem;
     }
 
-    /* Shortcuts */
-    .category-title {
-        font-size: 2.25rem;
-    }
-
     .shortcut-card {
-        flex-direction: row; /* Volta para linha no desktop */
+        flex-direction: row;
         align-items: center;
         gap: 2rem; 
         padding: 2rem; 
