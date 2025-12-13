@@ -4,454 +4,395 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Atalhos – Meu PC</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: {
-            dark: '#0F172A',
-            card: '#1E293B',
-            neon: '#00D4FF',
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="atalhos.css"> 
+  
   <style>
-    .glow { text-shadow: 0 0 30px #00D4FF, 0 0 60px rgba(0,212,255,0.4); }
-    .shortcut-card { transition: all 0.3s ease; }
-    .shortcut-card.hidden { display: none !important; }
+    /* Apenas para garantir o scroll suave */
+    html { 
+        scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body class="bg-dark text-white min-h-screen">
 
-  <nav class="fixed top-0 w-full bg-dark/90 backdrop-blur-xl z-50 border-b border-white/5">
-    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <div class="w-11 h-11 bg-gradient-to-br from-neon to-blue-600 rounded-xl flex items-center justify-center font-black text-2xl">PC</div>
-        <h1 class="text-2xl font-black">Meu PC</h1>
-      </div>
-      <div class="hidden md:flex space-x-10 text-gray-300 font-medium">
-        <a href="index.html" class="hover:text-neon transition">Início</a>
-        <a href="atalhos.html" class="text-neon font-bold">Atalhos</a>
-        <a href="desempenho.html" class="hover:text-neon transition">Desempenho</a>
-        <a href="seguranca.html" class="hover:text-neon transition">Segurança</a>
-        <a href="personalizacao.html" class="hover:text-neon transition">Personalização</a>
-        <a href="ferramentas.html" class="hover:text-neon transition">Ferramentas</a>
+  <nav class="navbar">
+    <div class="nav-container max-w-6xl mx-auto px-6 py-5">
+      <div class="nav-header">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon">PC</div>
+            <h1>Meu PC</h1>
+        </a>
+        
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Início</a>
+          <a href="atalhos.html" class="nav-link nav-link-active">Atalhos</a>
+          <a href="desempenho.html" class="nav-link">Desempenho</a>
+          <a href="seguranca.html" class="nav-link">Segurança</a>
+          <a href="personalizacao.html" class="nav-link">Personalização</a>
+          <a href="ferramentas.html" class="nav-link">Ferramentas</a>
+        </div>
       </div>
     </div>
   </nav>
 
-  <section class="pt-32 pb-16 px-6 text-center">
-    <h2 class="text-5xl md:text-7xl font-black mb-6 glow">Atalhos</h2>
-    <p class="text-2xl text-gray-400 mb-10">Todos os atalhos que você precisa no dia a dia</p>
+  <section class="hero-section">
+    <h2 class="title-main glow">Atalhos</h2>
+    <p class="subtitle">Todos os atalhos que você precisa no dia a dia</p>
 
-    <div class="max-w-2xl mx-auto relative">
+    <div class="search-container">
       <input type="text" id="searchInput" placeholder="Buscar atalho (ex: copiar, bloquear, barra de tarefas...)"
-        class="w-full px-8 py-6 bg-card/60 backdrop-blur-xl border border-white/10 rounded-full text-xl focus:outline-none focus:border-neon transition placeholder-gray-500" autocomplete="off">
-      <svg class="absolute right-6 top-6 w-8 h-8 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        class="search-input" autocomplete="off">
+      <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
       </svg>
     </div>
   </section>
 
-  <section class="px-6 pb-24 max-w-5xl mx-auto">
-    <div id="shortcutsList" class="space-y-12">
+  <section class="shortcuts-content">
+    <div id="shortcutsList" class="shortcuts-list-container">
       
       <div>
-        <h3 class="text-4xl font-extrabold mb-6 text-neon border-b-2 border-neon/50 pb-2">Teclas F (Função)</h3>
+        <h3 class="category-title">Teclas F (Função)</h3>
         
-        <div class="space-y-4">
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">F1</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Ajuda</h4></div>
+        <div class="category-group">
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">F1</kbd>
+            <div><h4 class="shortcut-description">Ajuda</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">F2</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Renomear item selecionado</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">F2</kbd>
+            <div><h4 class="shortcut-description">Renomear item selecionado</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">F3</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Procurar</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">F3</kbd>
+            <div><h4 class="shortcut-description">Procurar</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">F5</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Atualizar a janela</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">F5</kbd>
+            <div><h4 class="shortcut-description">Atualizar a janela</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">F10</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Seleciona a barra de menus do programa</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">F10</kbd>
+            <div><h4 class="shortcut-description">Seleciona a barra de menus do programa</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">SHIFT + F10</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Abre menu de contexto (botão direito)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">SHIFT + F10</kbd>
+            <div><h4 class="shortcut-description">Abre menu de contexto (botão direito)</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">F11</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Tela cheia</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">F11</kbd>
+            <div><h4 class="shortcut-description">Tela cheia</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">F12</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Salvar como</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">F12</kbd>
+            <div><h4 class="shortcut-description">Salvar como</h4></div>
           </div>
         </div>
       </div>
       
       <div>
-        <h3 class="text-4xl font-extrabold mb-6 text-neon border-b-2 border-neon/50 pb-2">Teclas CTRL</h3>
+        <h3 class="category-title">Teclas CTRL</h3>
         
-        <div class="space-y-4">
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + C</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Copiar</h4></div>
+        <div class="category-group">
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + C</kbd>
+            <div><h4 class="shortcut-description">Copiar</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + V</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Colar</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + V</kbd>
+            <div><h4 class="shortcut-description">Colar</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + X</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Recortar</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + X</kbd>
+            <div><h4 class="shortcut-description">Recortar</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + Z</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Desfazer</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + Z</kbd>
+            <div><h4 class="shortcut-description">Desfazer</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + Y</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Refazer</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + Y</kbd>
+            <div><h4 class="shortcut-description">Refazer</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + A</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Seleciona tudo</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + A</kbd>
+            <div><h4 class="shortcut-description">Seleciona tudo</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + D</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Enviar pra lixeira</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + D</kbd>
+            <div><h4 class="shortcut-description">Enviar pra lixeira</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + R</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Atualizar janela</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + R</kbd>
+            <div><h4 class="shortcut-description">Atualizar janela</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + F4</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Fecha guias internas</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + F4</kbd>
+            <div><h4 class="shortcut-description">Fecha guias internas</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + Setas</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Mover cursor uma palavra por vez</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + Setas</kbd>
+            <div><h4 class="shortcut-description">Mover cursor uma palavra por vez</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + Shift + Setas</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Mover selecionando palavras</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + Shift + Setas</kbd>
+            <div><h4 class="shortcut-description">Mover selecionando palavras</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + Setas + Espaço</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Selecionar itens variados (em pastas)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + Setas + Espaço</kbd>
+            <div><h4 class="shortcut-description">Selecionar itens variados (em pastas)</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + Esc</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Menu Iniciar</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + Esc</kbd>
+            <div><h4 class="shortcut-description">Menu Iniciar</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + Shift + Esc</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Gerenciador de Tarefas (direto)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + Shift + Esc</kbd>
+            <div><h4 class="shortcut-description">Gerenciador de Tarefas (direto)</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + HOME</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Vai para o topo da página/documento</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + HOME</kbd>
+            <div><h4 class="shortcut-description">Vai para o topo da página/documento</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + END</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Vai para o final da página/documento</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + END</kbd>
+            <div><h4 class="shortcut-description">Vai para o final da página/documento</h4></div>
           </div>
         </div>
       </div>
       
       <div>
-        <h3 class="text-4xl font-extrabold mb-6 text-neon border-b-2 border-neon/50 pb-2">Teclas ALT</h3>
+        <h3 class="category-title">Teclas ALT</h3>
         
-        <div class="space-y-4">
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Alt + Shift</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Alterar entradas de teclado (idioma)</h4></div>
+        <div class="category-group">
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Alt + Shift</kbd>
+            <div><h4 class="shortcut-description">Alterar entradas de teclado (idioma)</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Alt + Tab</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Alternar janelas de aplicativo</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Alt + Tab</kbd>
+            <div><h4 class="shortcut-description">Alternar janelas de aplicativo</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + Alt + Tab</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Alternar app (com visualização permanente)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + Alt + Tab</kbd>
+            <div><h4 class="shortcut-description">Alternar app (com visualização permanente)</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Ctrl + Alt + Del</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Abre opções de segurança (Gerenciador/Reiniciar)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Ctrl + Alt + Del</kbd>
+            <div><h4 class="shortcut-description">Abre opções de segurança (Gerenciador/Reiniciar)</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + Alt + D</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Mostrar data e hora</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + Alt + D</kbd>
+            <div><h4 class="shortcut-description">Mostrar data e hora</h4></div>
           </div>
         </div>
       </div>
       
       <div>
-        <h3 class="text-4xl font-extrabold mb-6 text-neon border-b-2 border-neon/50 pb-2">Controles do Cursor/Navegação</h3>
+        <h3 class="category-title">Controles do Cursor/Navegação</h3>
         
-        <div class="space-y-4">
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">SETAS</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Move o cursor / Foco</h4></div>
+        <div class="category-group">
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">SETAS</kbd>
+            <div><h4 class="shortcut-description">Move o cursor / Foco</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">TAB</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Navegação (muda o foco)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">TAB</kbd>
+            <div><h4 class="shortcut-description">Navegação (muda o foco)</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">TAB + Seta Dir.</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Abrir sub menu</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">TAB + Seta Dir.</kbd>
+            <div><h4 class="shortcut-description">Abrir sub menu</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">TAB + Seta Esq.</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Fechar sub menu</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">TAB + Seta Esq.</kbd>
+            <div><h4 class="shortcut-description">Fechar sub menu</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">HOME</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Vai para o início da linha</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">HOME</kbd>
+            <div><h4 class="shortcut-description">Vai para o início da linha</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">END</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Vai para o final da linha</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">END</kbd>
+            <div><h4 class="shortcut-description">Vai para o final da linha</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">PAGE UP</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Sobe uma página/tela</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">PAGE UP</kbd>
+            <div><h4 class="shortcut-description">Sobe uma página/tela</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">PAGE DOWN</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Desce uma página/tela</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">PAGE DOWN</kbd>
+            <div><h4 class="shortcut-description">Desce uma página/tela</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + Setas</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Ajustar janela do app</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + Setas</kbd>
+            <div><h4 class="shortcut-description">Ajustar janela do app</h4></div>
           </div>
         </div>
       </div>
       
       <div>
-        <h3 class="text-4xl font-extrabold mb-6 text-neon border-b-2 border-neon/50 pb-2">Caracteres Especiais (Alt Codes)</h3>
+        <h3 class="category-title">Caracteres Especiais (Alt Codes)</h3>
         
-        <div class="space-y-4">
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0145</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">' Aspa simples de abertura</h4></div>
+        <div class="category-group">
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0145</kbd>
+            <div><h4 class="shortcut-description">' Aspa simples de abertura</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0146</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">' Aspa simples de fechamento</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0146</kbd>
+            <div><h4 class="shortcut-description">' Aspa simples de fechamento</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0147</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">" Aspa dupla de abertura</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0147</kbd>
+            <div><h4 class="shortcut-description">" Aspa dupla de abertura</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0148</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">" Aspa dupla de fechamento</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0148</kbd>
+            <div><h4 class="shortcut-description">" Aspa dupla de fechamento</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0150</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">– En dash (traço curto)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0150</kbd>
+            <div><h4 class="shortcut-description">– En dash (traço curto)</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0151</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">— Em dash (traço longo)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0151</kbd>
+            <div><h4 class="shortcut-description">— Em dash (traço longo)</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0133</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">... Reticências</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0133</kbd>
+            <div><h4 class="shortcut-description">... Reticências</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0149</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">• Bullet (Ponto de lista)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0149</kbd>
+            <div><h4 class="shortcut-description">• Bullet (Ponto de lista)</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0174</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">® Marca Registrada</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0174</kbd>
+            <div><h4 class="shortcut-description">® Marca Registrada</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0169</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">© Copyright</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0169</kbd>
+            <div><h4 class="shortcut-description">© Copyright</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0153</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">™ Trademark</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0153</kbd>
+            <div><h4 class="shortcut-description">™ Trademark</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0176</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">° Grau</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0176</kbd>
+            <div><h4 class="shortcut-description">° Grau</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0162</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">¢ Centavo</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0162</kbd>
+            <div><h4 class="shortcut-description">¢ Centavo</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0188</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">¼ Um quarto</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0188</kbd>
+            <div><h4 class="shortcut-description">¼ Um quarto</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0189</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">½ Um meio</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0189</kbd>
+            <div><h4 class="shortcut-description">½ Um meio</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">ALT + 0190</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">¾ Três quartos</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">ALT + 0190</kbd>
+            <div><h4 class="shortcut-description">¾ Três quartos</h4></div>
           </div>
         </div>
       </div>
       
       <div>
-        <h3 class="text-4xl font-extrabold mb-6 text-neon border-b-2 border-neon/50 pb-2"> WIN</h3>
+        <h3 class="category-title">WIN</h3>
         
-        <div class="space-y-4">
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + A</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Centro de Ações</h4></div>
+        <div class="category-group">
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + A</kbd>
+            <div><h4 class="shortcut-description">Centro de Ações</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + B</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Foca na área de notificações</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + B</kbd>
+            <div><h4 class="shortcut-description">Foca na área de notificações</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + C</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Cortana / Chat com IA</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + C</kbd>
+            <div><h4 class="shortcut-description">Cortana / Chat com IA</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + D</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Mostrar área de trabalho</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + D</kbd>
+            <div><h4 class="shortcut-description">Mostrar área de trabalho</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + E</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Abrir File Explorer</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + E</kbd>
+            <div><h4 class="shortcut-description">Abrir File Explorer</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + G</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Game Bar</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + G</kbd>
+            <div><h4 class="shortcut-description">Game Bar</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + I</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Abrir Configurações</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + I</kbd>
+            <div><h4 class="shortcut-description">Abrir Configurações</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + L</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Bloquear PC</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + L</kbd>
+            <div><h4 class="shortcut-description">Bloquear PC</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + M</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Minimizar todas as janelas</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + M</kbd>
+            <div><h4 class="shortcut-description">Minimizar todas as janelas</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + P</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Modo de apresentação de tela</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + P</kbd>
+            <div><h4 class="shortcut-description">Modo de apresentação de tela</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + S</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Abrir pesquisa</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + S</kbd>
+            <div><h4 class="shortcut-description">Abrir pesquisa</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + T</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">App da barra de tarefas (foco)</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + T</kbd>
+            <div><h4 class="shortcut-description">App da barra de tarefas (foco)</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + Tab</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Programas abertos / Áreas de trabalho</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + Tab</kbd>
+            <div><h4 class="shortcut-description">Programas abertos / Áreas de trabalho</h4></div>
           </div>
-          
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + R</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Executar</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + R</kbd>
+            <div><h4 class="shortcut-description">Executar</h4></div>
           </div>
-
-            <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Win + .</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Emojis</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Win + .</kbd>
+            <div><h4 class="shortcut-description">Emojis</h4></div>
           </div>
-
-          <div class="shortcut-card flex items-center gap-8 p-8 bg-card/60 backdrop-blur-xl rounded-3xl border border-white/10 hover:border-neon/50 transition">
-            <kbd class="px-6 py-4 bg-dark border border-neon text-neon text-2xl font-bold rounded-xl min-w-48 text-center">Shift + Delete</kbd>
-            <div><h4 class="text-2xl font-bold mb-1">Excluir sem ir pra lixeira</h4></div>
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">Shift + Delete</kbd>
+            <div><h4 class="shortcut-description">Excluir sem ir pra lixeira</h4></div>
           </div>
         </div>
       </div>
+
+        <h3 class="category-title">Outros</h3>
+        
+        <div class="category-group">
+          <div class="shortcut-card">
+            <kbd class="shortcut-key">. </kbd>
+            <div><h4 class="shortcut-description">.</h4></div>
+          </div>
+         
+
+
+
+
 
     </div>
   </section>
 
-  <footer class="py-16 text-center text-gray-500 border-t border-white/10">
-    <p class="text-lg">© 2025 Meu PC — Feito com carinho para quem quer dominar o Windows sem virar técnico</p>
+  <footer class="footer">
+    <p class="footer-text">© 2025 Meu PC — Feito com carinho para quem quer dominar o Windows sem virar técnico</p>
   </footer>
 
   <script>
@@ -462,8 +403,12 @@
       const query = searchInput.value.toLowerCase().trim();
       shortcuts.forEach(card => {
         const text = card.textContent.toLowerCase();
-        // A busca é aplicada a todos os "shortcut-card", independentemente da categoria
-        card.classList.toggle('hidden', !text.includes(query));
+        // Alterna a classe 'hidden' se o texto do atalho não incluir a query
+        if (!text.includes(query)) {
+            card.classList.add('hidden');
+        } else {
+            card.classList.remove('hidden');
+        }
       });
     });
   </script>
