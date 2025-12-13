@@ -1,0 +1,310 @@
+/*
+ * =========================================================
+ * atalhos.css - ESTILO COMPLETO E RESPONSIVO (SEM TAILWIND)
+ * =========================================================
+ */
+
+/* Variáveis de Cores */
+:root {
+    --color-dark: #0F172A; /* Fundo principal */
+    --color-card: #1E293B; /* Fundo dos cards */
+    --color-neon: #00D4FF; /* Cor de destaque */
+    --color-white: #FBFDFE;
+    --color-gray-text: #D1D5DB;
+    --color-gray-footer: #6B7280;
+}
+
+/* ------------------ 1. BASE E TIPOGRAFIA ------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+/* ------------------ 2. UTILS E EFEITOS ------------------ */
+
+.glow { 
+    text-shadow: 0 0 30px var(--color-neon), 0 0 60px rgba(0, 212, 255, 0.4); 
+}
+
+/* Usado pelo JavaScript de busca para ocultar resultados */
+.shortcut-card.hidden { 
+    display: none !important; 
+}
+
+
+/* ------------------ 3. NAVBAR (Mobile-First) ------------------ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* Cor de fundo com transparência e desfoque */
+    background-color: rgba(15, 23, 42, 0.9); 
+    backdrop-filter: blur(12px);
+    z-index: 50;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+    padding: 1.25rem 1.5rem; /* py-5 px-6 */
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* space-x-3 */
+}
+
+.nav-logo h1 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 900; /* font-black */
+}
+
+.nav-logo-icon {
+    width: 2.75rem; /* w-11 */
+    height: 2.75rem; /* h-11 */
+    background: linear-gradient(to bottom right, var(--color-neon), #2563EB);
+    border-radius: 0.75rem; /* rounded-xl */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.5rem; /* text-2xl */
+}
+
+/* Links de navegação: Oculto no mobile */
+.nav-links {
+    display: none;
+}
+
+.nav-link {
+    color: var(--color-gray-text);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--color-neon);
+}
+
+.nav-link-active {
+    color: var(--color-neon);
+    font-weight: 700;
+}
+
+
+/* ------------------ 4. HERO SECTION (Mobile-First) ------------------ */
+
+.hero-section {
+    padding: 8rem 1.5rem 4rem; /* pt-32 pb-16 px-6 */
+    text-align: center;
+}
+
+.title-main {
+    font-size: 3rem; /* text-5xl */
+    font-weight: 900; /* font-black */
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.subtitle {
+    font-size: 1.25rem; /* text-2xl */
+    color: #9CA3AF; /* text-gray-400 */
+    margin-bottom: 2.5rem; /* mb-10 */
+}
+
+.search-container {
+    max-width: 42rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1.5rem 2rem; /* px-8 py-6 */
+    background-color: rgba(30, 41, 59, 0.6); /* bg-card/60 */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px; /* rounded-full */
+    font-size: 1.25rem; /* text-xl */
+    outline: none;
+    transition: border 0.3s;
+    color: var(--color-white);
+    caret-color: var(--color-neon);
+}
+
+.search-input::placeholder {
+    color: #6B7280; /* placeholder-gray-500 */
+}
+
+.search-input:focus {
+    border-color: var(--color-neon);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.5rem; /* right-6 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem; /* w-8 */
+    height: 2rem; /* h-8 */
+    color: var(--color-neon);
+}
+
+
+/* ------------------ 5. LISTA DE ATALHOS (Mobile-First) ------------------ */
+
+.shortcuts-content {
+    padding: 0 1.5rem 6rem; /* px-6 pb-24 */
+    max-width: 80rem; /* max-w-5xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shortcuts-list-container > div {
+    margin-bottom: 3rem; /* space-y-12 -> convertido para margin-bottom */
+}
+
+.category-title {
+    font-size: 2rem; /* text-4xl */
+    font-weight: 800; /* font-extrabold */
+    margin-bottom: 1.5rem; /* mb-6 */
+    color: var(--color-neon);
+    border-bottom: 2px solid rgba(0, 212, 255, 0.5); /* border-b-2 border-neon/50 */
+    padding-bottom: 0.5rem; /* pb-2 */
+}
+
+.category-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+}
+
+.shortcut-card {
+    display: flex;
+    flex-direction: column; /* flex-col no mobile */
+    align-items: flex-start;
+    gap: 1rem; /* gap-4 */
+    padding: 1.5rem; /* p-6 */
+    background-color: rgba(30, 41, 59, 0.6); 
+    backdrop-filter: blur(12px);
+    border-radius: 1.5rem; /* rounded-3xl */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.shortcut-card:hover {
+    border-color: rgba(0, 212, 255, 0.5); /* hover:border-neon/50 */
+}
+
+.shortcut-key {
+    padding: 1rem 1.5rem; /* px-6 py-4 */
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-neon);
+    color: var(--color-neon);
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    border-radius: 0.75rem; /* rounded-xl */
+    text-align: center;
+    min-width: 10rem; /* min-w-40 */
+}
+
+.shortcut-description {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700;
+    margin-bottom: 0.25rem; /* mb-1 */
+    /* Garante que a descrição ocupe o espaço restante */
+    flex-grow: 1;
+    min-width: 0;
+}
+
+
+/* ------------------ 6. FOOTER ------------------ */
+
+.footer {
+    padding: 4rem 1.5rem; /* py-16 */
+    text-align: center;
+    color: var(--color-gray-footer);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-text {
+    font-size: 1.125rem; /* text-lg */
+}
+
+
+/* ------------------ 7. MEDIA QUERIES (Desktop/Tablet) ------------------ */
+
+@media (min-width: 768px) {
+    
+    /* Navbar */
+    .nav-header {
+        justify-content: space-between;
+    }
+    
+    /* Links de navegação: Visível no desktop */
+    .nav-links {
+        display: flex;
+        gap: 2.5rem; /* space-x-10 */
+        align-items: center;
+    }
+
+    /* Hero */
+    .title-main {
+        font-size: 4.5rem; /* text-7xl */
+    }
+    
+    /* Search */
+    .search-input {
+        font-size: 1.5rem;
+    }
+    .search-icon {
+        right: 1.5rem;
+        top: 1.5rem;
+    }
+
+    /* Shortcuts */
+    .category-title {
+        font-size: 2.25rem;
+    }
+
+    .category-group {
+        gap: 1rem;
+    }
+
+    .shortcut-card {
+        flex-direction: row; /* flex-row no desktop */
+        align-items: center;
+        gap: 2rem; /* gap-8 */
+        padding: 2rem; /* p-8 */
+    }
+
+    .shortcut-key {
+        font-size: 1.5rem; /* text-2xl */
+        min-width: 12rem; /* min-w-48 */
+    }
+
+    .shortcut-description {
+        font-size: 1.5rem; /* text-2xl */
+    }
+}
